@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio do Johny</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #353949;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding-top: 100px;
+            padding: 0;
+            margin: 0;
+            height: 2000px;
+            /* Apenas para exemplificar o scroll */
+        }
+
+        .barra-flutuante {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #353949;
+            color: #fff;
+            text-align: center;
+            padding: 0 0;
+            z-index: 1000;
+        }
+
+        .barra-flutuante button {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #353949;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .barra-flutuante button:hover {
+            background-color: #4354BD;
+        }
+
+
+        .container-main { max-width: 1200px; /* Largura máxima do conteúdo */ margin: 0 auto; /* Centraliza o contêiner */ padding: 100px 20px; /* Espaçamento interno */ }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            text-align: center;
+        }
+        .item-first{
+            color:aquamarine;
+            font-size: 15px;
+            text-align: center;
+            margin: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .item-second{
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            text-align: center;
+            font-size: 30px;
+        }
+        h2 {
+            color: #A8E6CF;
+            text-align: center;
+            scroll-margin-top: 60px;
+        }
+        h3 {
+            color: #A8E6CF;
+        }
+        .languages {
+            display: flex;
+            justify-content: center;
+            gap: 0px;
+            margin:20px;
+        }
+        .style-languages {
+            width: 40px;
+            height: 40px;
+            border-radius: 15px;
+            /* Bordas arredondadas */
+            padding: 20px;
+            /* Espaçamento interno */
+            margin: 5px 5px;
+            /* Centraliza horizontalmente e adiciona margem */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra para dar profundidade */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            height: 250px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .myself {
+            width: 750px;
+            height: auto;
+            margin-right: 25px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .about {
+            text-align: justify;
+            line-height: 1.6;
+            font-family: 'Montserrat' sans-serif;
+        }
+
+        .graduation {
+            margin-bottom: 35px;
+            line-height: 0;
+            text-align: justify;
+        }
+
+        .duration{
+            margin-top: 0;
+            margin-bottom: 35px;
+            color: gray;
+        }
+        .portifolio {
+            display: flex;
+            justify-content: center;
+            gap: 0px;
+            margin:20px;
+        }
+
+        .project-container {
+            background-color: #cccccc;
+            /* Fundo cinza */
+            width: 200px;
+            /* Largura */
+            height: 200px;
+            /* Altura */
+            border-radius: 15px;
+            /* Bordas arredondadas */
+            padding: 20px;
+            /* Espaçamento interno */
+            margin: 5px 50px;
+            /* Centraliza horizontalmente e adiciona margem */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra para dar profundidade */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="barra-flutuante">
+        <button class="sobre styled" type="button" onclick="scrollToContato('sobre-mim-button')">Sobre mim</button>
+        <button class="formação styled" type="button" onclick="scrollToContato('formacao-button')">Formação</button>
+        <button class="portifolio styled" type="button" onclick="scrollToContato('portifolio-button')">Portifolio</button>
+        <button class="contato styled" type="button" onclick="scrollToContato('contato-button')">Contato</button>
+    </div>
+    <div class="container-main">
+    <h1>Desenvolvedor de Software</h1>
+    <p class="item-first">Em formação</p>
+    <p class="item-second">Johny Lira Cavalcante</p>
+
+    <h2 id="sobre-mim-button" class="about">Sobre mim</h2>
+    <div class="container">
+        <img src="src/image-me.jpeg" class="myself">
+    <p class="about"> 
+        Olá! Me chamo Johny, tenho 29 anos e sempre fui ligado a tecnologia. </br> Há dois anos decidi retomar o sonho de trabalhar com programação. Entrei para escola 42, que possui um método de ensino inovador e com bastante "mão na massa". Onde aprendi muito sobre lógica de programação, pensasmento crítico, clean code, e colaboração.</br>
+        Hoje estou cursando <b>Análise e Desenvolvimento de Sistemas</b> focando em me tornar desenvolvedor Beck-end. Estou em contante evolução e entrando em contato com novas tecnologias, linguagens e ferramentas que me permitam me tornar um melhor profissional.
+        Tenho conhecimento da linguagem C, Python, Go, JavaScript e uma crescente proficiência em Java. Sou uma pessoa amigável que adora compartilhar conhecimento e colaborar com outras pessoas.
+    </p>
+    </div>
+
+    <div class="languages">
+        <img src="src/c.png" class="style-languages">
+        <img src="src/python.png" class="style-languages">
+        <img src="src/javascript.png" class="style-languages">
+        <img src="src/go.png" class="style-languages">
+        <img src="src/java.png" class="style-languages">
+    </div>
+
+
+    <h2 id="formacao-button" class="graduation">Formação</h2>
+    <div class="graduation">
+    <div>
+        <p><b>Técnico em Informática</b> | Senac</p>
+        <p class="duration">Mar 2012 - Dez 2013</p>
+        <p><b>Escola de Programaçao</b> | 42 Rio</p>
+        <p class="duration">Jul 2023 - Fev 2024</p>
+        <p><b>Análise e Desenvolvimento de Sistemas</b> | Uninter</p>
+        <p class="duration">Mai 2024 - Dez 2026</p>
+    <h3>Idiomas</h3>
+    <p><b>Português</b>: Nativo | <b>Inglês</b>: Avançado C1</p>
+    </div>
+</div>
+    <h2 id="portifolio-button">Portifolio</h2>
+    <div class="portifolio">
+        <div class="project-container">Projetin 1</div>
+        <div class="project-container">Projetin 2</div>
+    </div>
+    <h2 id="contato-button" class="contact">Contato</h2>
+    <p>
+        Entre em contato
+    </p>
+    <form></form>
+    <!-- Script -->
+     </div>
+    <script>
+        function scrollToContato(name) { document.getElementById(name).scrollIntoView({ behavior: 'smooth' }); }
+
+    </script>
+</body>
+
+</html>
