@@ -181,7 +181,7 @@
         .contact {
             text-align: justify;
         }
-    
+
         /* Media Queries para ajustes responsivos */
         @media (max-width: 768px) {
             .container-main {
@@ -196,11 +196,13 @@
             .barra-flutuante button {
                 margin: 5px 0;
             }
+
             .container {
                 flex-direction: column;
                 align-items: center;
             }
-            .myself{
+
+            .myself {
                 margin-right: 0;
             }
         }
@@ -227,74 +229,90 @@
             .contact {
                 padding: 0px;
             }
-    
+
         }
     </style>
 </head>
 
 <body>
-    <div class="barra-flutuante">
-        <button class="sobre styled" type="button" onclick="scrollToContato('sobre-mim-button')">Sobre mim</button>
-        <button class="formação styled" type="button" onclick="scrollToContato('formacao-button')">Formação</button>
-        <button class="portifolio styled" type="button"
-            onclick="scrollToContato('portifolio-button')">Portifolio</button>
-        <button class="contato styled" type="button" onclick="scrollToContato('contato-button')">Contato</button>
-    </div>
+    <section id="barra">
+        <!-- Links de navegação -->
+        <div class="barra-flutuante">
+            <button class="sobre styled" type="button" onclick="scrollToContato('sobre-mim-button')">Sobre mim</button>
+            <button class="formação styled" type="button" onclick="scrollToContato('formacao-button')">Formação</button>
+            <button class="portifolio styled" type="button"
+                onclick="scrollToContato('portifolio-button')">Portifolio</button>
+            <button class="contato styled" type="button" onclick="scrollToContato('contato-button')">Contato</button>
+        </div>
+    </section>
     <div class="container-main">
         <h1>Desenvolvedor de Software</h1>
         <p class="item-first">Em formação</p>
         <p class="item-second">Johny Lira Cavalcante</p>
 
-        <h2 id="sobre-mim-button" class="about">Sobre mim</h2>
-        <div class="container">
-            <img src="src/image-me.jpeg" class="myself">
-            <p class="about">
-                Olá! Me chamo Johny, tenho 29 anos e sempre fui ligado a tecnologia. </br> Há dois anos decidi retomar o
-                sonho de trabalhar com programação. Entrei para escola 42, que possui um método de ensino inovador e com
-                bastante "mão na massa". Onde aprendi muito sobre lógica de programação, pensasmento crítico, clean
-                code, e colaboração.</br>
-                Hoje estou cursando <b>Análise e Desenvolvimento de Sistemas</b> focando em me tornar desenvolvedor
-                Beck-end. Estou em contante evolução e entrando em contato com novas tecnologias, linguagens e
-                ferramentas que me permitam me tornar um melhor profissional.
-                Tenho conhecimento da linguagem C, Python, Go, JavaScript e uma crescente proficiência em Java. Sou uma
-                pessoa amigável que adora compartilhar conhecimento e colaborar com outras pessoas.
-            </p>
-        </div>
-
-        <div class="languages">
-            <img src="src/c.png" class="style-languages">
-            <img src="src/python.png" class="style-languages">
-            <img src="src/javascript.png" class="style-languages">
-            <img src="src/go.png" class="style-languages">
-            <img src="src/java.png" class="style-languages">
-        </div>
-
-
-        <h2 id="formacao-button" class="graduation">Formação</h2>
-        <div class="graduation">
-            <div>
-                <p><b>Técnico em Informática</b> | Senac</p>
-                <p class="duration">Mar 2012 - Dez 2013</p>
-                <p><b>Escola de Programaçao</b> | 42 Rio</p>
-                <p class="duration">Jul 2023 - Fev 2024</p>
-                <p><b>Análise e Desenvolvimento de Sistemas</b> | Uninter</p>
-                <p class="duration">Mai 2024 - Dez 2026</p>
-                <h3>Idiomas</h3>
-                <p><b>Português</b>: Nativo | <b>Inglês</b>: Avançado C1</p>
+        <section id="sobre">
+            <!-- Seção sobre mim -->
+            <h2 id="sobre-mim-button" class="about">Sobre mim</h2>
+            <div class="container">
+                <img src="src/image-me.jpeg" class="myself">
+                <p class="about">
+                    Olá! Me chamo Johny, tenho 29 anos e sempre fui ligado a tecnologia. </br> Há dois anos decidi
+                    retomar o
+                    sonho de trabalhar com programação. Entrei para escola 42, que possui um método de ensino inovador e
+                    com
+                    bastante "mão na massa". Onde aprendi muito sobre lógica de programação, pensasmento crítico, clean
+                    code, e colaboração.</br>
+                    Hoje estou cursando <b>Análise e Desenvolvimento de Sistemas</b> focando em me tornar desenvolvedor
+                    Beck-end. Estou em contante evolução e entrando em contato com novas tecnologias, linguagens e
+                    ferramentas que me permitam me tornar um melhor profissional.
+                    Tenho conhecimento da linguagem C, Python, Go, JavaScript e uma crescente proficiência em Java. Sou
+                    uma
+                    pessoa amigável que adora compartilhar conhecimento e colaborar com outras pessoas.
+                </p>
             </div>
-        </div>
-        <h2 id="portifolio-button">Portifolio</h2>
-        <div class="portifolio">
-            <div class="project-container">Projetin 1</div>
-            <div class="project-container">Projetin 2</div>
-        </div>
-        <h2 id="contato-button" class="contact">Contato</h2>
-        <p>
-            Entre em contato
-        </p>
-        <form></form>
-        <!-- Script -->
+
+            <div class="languages">
+                <img src="src/c.png" class="style-languages">
+                <img src="src/python.png" class="style-languages">
+                <img src="src/javascript.png" class="style-languages">
+                <img src="src/go.png" class="style-languages">
+                <img src="src/java.png" class="style-languages">
+            </div>
+        </section>
+        <section id="formacao">
+            <!-- Seção de formação -->
+            <h2 id="formacao-button" class="graduation">Formação</h2>
+            <div class="graduation">
+                <div>
+                    <p><b>Técnico em Informática</b> | Senac</p>
+                    <p class="duration">Mar 2012 - Dez 2013</p>
+                    <p><b>Escola de Programaçao</b> | 42 Rio</p>
+                    <p class="duration">Jul 2023 - Fev 2024</p>
+                    <p><b>Análise e Desenvolvimento de Sistemas</b> | Uninter</p>
+                    <p class="duration">Mai 2024 - Dez 2026</p>
+                    <h3>Idiomas</h3>
+                    <p><b>Português</b>: Nativo | <b>Inglês</b>: Avançado C1</p>
+                </div>
+            </div>
+        </section>
+        <section id="portifolio">
+            <!-- Seção de portifolio -->
+            <h2 id="portifolio-button">Portifolio</h2>
+            <div class="portifolio">
+                <div class="project-container">Projetin 1</div>
+                <div class="project-container">Projetin 2</div>
+            </div>
+        </section>
+        <section id="contato">
+            <!-- Seção de contato -->
+            <h2 id="contato-button" class="contact">Contato</h2>
+            <p>
+                Entre em contato
+            </p>
+            <form></form>
+            <!-- Script -->
     </div>
+    </section>
     <script>
         function scrollToContato(name) { document.getElementById(name).scrollIntoView({ behavior: 'smooth' }); }
 
