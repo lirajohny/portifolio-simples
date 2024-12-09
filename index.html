@@ -172,7 +172,6 @@
             /* Centraliza horizontalmente e adiciona margem */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             /* Sombra para dar profundidade */
-            display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -181,6 +180,52 @@
         .contact {
             text-align: justify;
         }
+        #contato {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#contato h2 {
+    text-align: center;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contato form p {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+#contato form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contato form input, #contato form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contato form button {
+    background-color: #4354BD;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contato form button:hover {
+    background-color: #333;
+}
+
 
         /* Media Queries para ajustes responsivos */
         @media (max-width: 768px) {
@@ -235,17 +280,15 @@
 </head>
 
 <body>
-    <section id="barra">
-        <!-- Links de navegação -->
-        <div class="barra-flutuante">
-            <button class="sobre styled" type="button" onclick="scrollToContato('sobre-mim-button')">Sobre mim</button>
-            <button class="formação styled" type="button" onclick="scrollToContato('formacao-button')">Formação</button>
-            <button class="portifolio styled" type="button"
-                onclick="scrollToContato('portifolio-button')">Portifolio</button>
-            <button class="contato styled" type="button" onclick="scrollToContato('contato-button')">Contato</button>
-        </div>
-    </section>
-    <div class="container-main">
+    <!-- Links de navegação -->
+    <nav class="barra-flutuante">
+        <button class="sobre styled" type="button" onclick="scrollToContato('sobre-mim-button')">Sobre mim</button>
+        <button class="formação styled" type="button" onclick="scrollToContato('formacao-button')">Formação</button>
+        <button class="portifolio styled" type="button"
+            onclick="scrollToContato('portifolio-button')">Portifolio</button>
+        <button class="contato styled" type="button" onclick="scrollToContato('contato-button')">Contato</button>
+    </nav>
+    <main class="container-main">
         <h1>Desenvolvedor de Software</h1>
         <p class="item-first">Em formação</p>
         <p class="item-second">Johny Lira Cavalcante</p>
@@ -299,23 +342,38 @@
             <!-- Seção de portifolio -->
             <h2 id="portifolio-button">Portifolio</h2>
             <div class="portifolio">
-                <div class="project-container">Projetin 1</div>
-                <div class="project-container">Projetin 2</div>
+                <div class="project-container">
+                    <h3>Libft</h3>
+                    <p class="duration">Recriei funções das princípais bibliotecas em C</p>
+                </div>
+                <div class="project-container">
+                    <h3>Fract-ol</h3>
+                    <p class="duration">Um projeto focado na criação de visualizações interativas de fractais como
+                        Mandelbrot e Julia escrito em C.</p>
+                </div>
             </div>
         </section>
-        <section id="contato">
-            <!-- Seção de contato -->
+        <section id="contato"> <!-- Seção de contato -->
             <h2 id="contato-button" class="contact">Contato</h2>
-            <p>
-                Entre em contato
-            </p>
-            <form></form>
-            <!-- Script -->
-    </div>
+            <form>
+                <p> <label for="name">Nome:</label> <input type="text" id="name" placeholder="Nome" name="name"
+                        required> </p>
+                <p> <label for="email">Email:</label> <input type="email" id="email" placeholder="Email" name="email"
+                        required> </p>
+                <p> <label for="mensagem">Mensagem:</label> <textarea id="mensagem" name="mensagem"
+                        placeholder="Mensagem" rows="5" cols="40" required></textarea> </p> <button
+                    type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
     </section>
+    <!--footer-->
+    <footer>
+        <p>&#174 2024 Johny Lira Cavalcante. Todos direitos reservados.</p>
+    </footer>
+        <!-- Script -->
     <script>
         function scrollToContato(name) { document.getElementById(name).scrollIntoView({ behavior: 'smooth' }); }
-
     </script>
 </body>
 
