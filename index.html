@@ -1,379 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifolio do Johny</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #353949;
-            font-family: Arial, sans-serif;
-            color: white;
-            padding-top: 100px;
-            padding: 0;
-            margin: 0;
-            height: 2000px;
-            /* Apenas para exemplificar o scroll */
-        }
-
-        .barra-flutuante {
-            display: flex;
-            justify-content: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #353949;
-            color: #fff;
-            text-align: center;
-            padding: 0 0;
-            z-index: 1000;
-        }
-
-        .barra-flutuante button {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #353949;
-            color: white;
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-        .barra-flutuante button:hover {
-            background-color: #4354BD;
-        }
-
-
-        .container-main {
-            max-width: 1200px;
-            /* Largura máxima do conteúdo */
-            margin: 0 auto;
-            /* Centraliza o contêiner */
-            padding: 100px 20px;
-            /* Espaçamento interno */
-        }
-
-        h1 {
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            text-align: center;
-        }
-
-        .item-first {
-            color: aquamarine;
-            font-size: 15px;
-            text-align: center;
-            margin: 10px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .item-second {
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            text-align: center;
-            font-size: 30px;
-        }
-
-        h2 {
-            color: #A8E6CF;
-            text-align: center;
-            scroll-margin-top: 60px;
-        }
-
-        h3 {
-            color: #A8E6CF;
-        }
-
-        .languages {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0px;
-            margin: 20px;
-        }
-
-        .style-languages {
-            width: 40px;
-            height: 40px;
-            border-radius: 15px;
-            /* Bordas arredondadas */
-            padding: 20px;
-            /* Espaçamento interno */
-            margin: 5px 5px;
-            /* Centraliza horizontalmente e adiciona margem */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Sombra para dar profundidade */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .container {
-            height: auto;
-            gap: 20px;
-            align-items: center;
-            flex-wrap: wrap;
-            display: flex;
-            justify-content: flex-start;
-            overflow: hidden;
-        }
-
-        .myself {
-            max-width: 300px;
-            height: auto;
-            width: 100%;
-            border-radius: 50%;
-        }
-
-        .about {
-            max-width: 600px;
-            width: 100%;
-            text-align: justify;
-            line-height: 1.6;
-            font-family: 'Montserrat' sans-serif;
-        }
-
-        .graduation {
-            margin-bottom: 35px;
-            line-height: 0;
-            text-align: justify;
-        }
-
-        .duration {
-            margin-top: 0;
-            margin-bottom: 35px;
-            color: gray;
-        }
-
-        .portifolio {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0px;
-            margin: 20px;
-        }
-
-        .project-container {
-            background-color: #cccccc;
-            /* Fundo cinza */
-            width: 200px;
-            /* Largura */
-            height: 200px;
-            /* Altura */
-            border-radius: 15px;
-            /* Bordas arredondadas */
-            padding: 20px;
-            /* Espaçamento interno */
-            margin: 5px 50px;
-            /* Centraliza horizontalmente e adiciona margem */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Sombra para dar profundidade */
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .contact {
-            text-align: justify;
-        }
-        #contato {
-    padding: 20px;
-    border-radius: 5px;
-}
-
-#contato h2 {
-    text-align: center;
-}
-
-#contato form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contato form p {
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 15px;
-}
-
-#contato form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#contato form input, #contato form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#contato form button {
-    background-color: #4354BD;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#contato form button:hover {
-    background-color: #333;
-}
-
-
-        /* Media Queries para ajustes responsivos */
-        @media (max-width: 768px) {
-            .container-main {
-                padding: 80px 10px;
-            }
-
-            .barra-flutuante {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            .barra-flutuante button {
-                margin: 5px 0;
-            }
-
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .myself {
-                margin-right: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            .item-first {
-                font-size: 12px;
-            }
-
-            .item-second {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            .about,
-            .graduation,
-            .contact {
-                padding: 0px;
-            }
-
-        }
-    </style>
+    <title>Johny Lira | Desenvolvedor de Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Links de navegação -->
-    <nav class="barra-flutuante">
-        <button class="sobre styled" type="button" onclick="scrollToContato('sobre-mim-button')">Sobre mim</button>
-        <button class="formação styled" type="button" onclick="scrollToContato('formacao-button')">Formação</button>
-        <button class="portifolio styled" type="button"
-            onclick="scrollToContato('portifolio-button')">Portifolio</button>
-        <button class="contato styled" type="button" onclick="scrollToContato('contato-button')">Contato</button>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">JL</div>
+            <ul class="nav-links">
+                <li><a href="#sobre" class="lang-pt">Sobre</a><a href="#sobre" class="lang-en">About</a></li>
+                <li><a href="#habilidades" class="lang-pt">Habilidades</a><a href="#habilidades" class="lang-en">Skills</a></li>
+                <li><a href="#projetos" class="lang-pt">Projetos</a><a href="#projetos" class="lang-en">Projects</a></li>
+                <li><a href="#formacao" class="lang-pt">Formação</a><a href="#formacao" class="lang-en">Education</a></li>
+                <li><a href="#contato" class="lang-pt">Contato</a><a href="#contato" class="lang-en">Contact</a></li>
+            </ul>
+            <div class="language-switch">
+                <div class="switcher">
+                    <input type="checkbox" id="lang-toggle" class="switcher-input" onchange="toggleLanguage()">
+                    <label for="lang-toggle" class="switcher-label">
+                        <span class="switcher-flag flag-br"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"></span>
+                        <span class="switcher-flag flag-us"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English"></span>
+                        <span class="switcher-button"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
     </nav>
-    <main class="container-main">
-        <h1>Desenvolvedor de Software</h1>
-        <p class="item-first">Em formação</p>
-        <p class="item-second">Johny Lira Cavalcante</p>
 
-        <section id="sobre">
-            <!-- Seção sobre mim -->
-            <h2 id="sobre-mim-button" class="about">Sobre mim</h2>
-            <div class="container">
-                <img src="src/image-me.jpeg" class="myself">
-                <p class="about">
-                    Olá! Me chamo Johny, tenho 29 anos e sempre fui ligado a tecnologia. </br> Há dois anos decidi
-                    retomar o
-                    sonho de trabalhar com programação. Entrei para escola 42, que possui um método de ensino inovador e
-                    com
-                    bastante "mão na massa". Onde aprendi muito sobre lógica de programação, pensasmento crítico, clean
-                    code, e colaboração.</br>
-                    Hoje estou cursando <b>Análise e Desenvolvimento de Sistemas</b> focando em me tornar desenvolvedor
-                    Beck-end. Estou em contante evolução e entrando em contato com novas tecnologias, linguagens e
-                    ferramentas que me permitam me tornar um melhor profissional.
-                    Tenho conhecimento da linguagem C, Python, Go, JavaScript e uma crescente proficiência em Java. Sou
-                    uma
-                    pessoa amigável que adora compartilhar conhecimento e colaborar com outras pessoas.
-                </p>
+    <!-- Seção Hero -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Johny Lira Cavalcante</h1>
+                <h2 class="lang-pt">Desenvolvedor de Software</h2>
+                <h2 class="lang-en">Software Developer</h2>
+                <p class="lang-pt">Criando soluções eficientes com código limpo e foco na experiência do usuário.</p>
+                <p class="lang-en">Creating efficient solutions with clean code and focus on user experience.</p>
             </div>
-
-            <div class="languages">
-                <img src="src/c.png" class="style-languages">
-                <img src="src/python.png" class="style-languages">
-                <img src="src/javascript.png" class="style-languages">
-                <img src="src/go.png" class="style-languages">
-                <img src="src/java.png" class="style-languages">
+            <div class="hero-image">
+                <img src="src/image-me.jpeg" alt="Johny Lira">
             </div>
-        </section>
-        <section id="formacao">
-            <!-- Seção de formação -->
-            <h2 id="formacao-button" class="graduation">Formação</h2>
-            <div class="graduation">
-                <div>
-                    <p><b>Técnico em Informática</b> | Senac</p>
-                    <p class="duration">Mar 2012 - Dez 2013</p>
-                    <p><b>Escola de Programaçao</b> | 42 Rio</p>
-                    <p class="duration">Jul 2023 - Fev 2024</p>
-                    <p><b>Análise e Desenvolvimento de Sistemas</b> | Uninter</p>
-                    <p class="duration">Mai 2024 - Dez 2026</p>
-                    <h3>Idiomas</h3>
-                    <p><b>Português</b>: Nativo | <b>Inglês</b>: Avançado C1</p>
-                </div>
-            </div>
-        </section>
-        <section id="portifolio">
-            <!-- Seção de portifolio -->
-            <h2 id="portifolio-button">Portifolio</h2>
-            <div class="portifolio">
-                <div class="project-container">
-                    <h3>Libft</h3>
-                    <p class="duration">Recriei funções das princípais bibliotecas em C</p>
-                </div>
-                <div class="project-container">
-                    <h3>Fract-ol</h3>
-                    <p class="duration">Um projeto focado na criação de visualizações interativas de fractais como
-                        Mandelbrot e Julia escrito em C.</p>
-                </div>
-            </div>
-        </section>
-        <section id="contato"> <!-- Seção de contato -->
-            <h2 id="contato-button" class="contact">Contato</h2>
-            <form>
-                <p> <label for="name">Nome:</label> <input type="text" id="name" placeholder="Nome" name="name"
-                        required> </p>
-                <p> <label for="email">Email:</label> <input type="email" id="email" placeholder="Email" name="email"
-                        required> </p>
-                <p> <label for="mensagem">Mensagem:</label> <textarea id="mensagem" name="mensagem"
-                        placeholder="Mensagem" rows="5" cols="40" required></textarea> </p> <button
-                    type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+        </div>
     </section>
-    <!--footer-->
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title lang-pt">Sobre Mim</h2>
+            <h2 class="section-title lang-en">About Me</h2>
+            <div class="about-content">
+                <div class="lang-pt">
+                    <p>Atualmente estou cursando Análise e Desenvolvimento de Sistemas, com uma sólida formação em ciência da computação. Tenho experiência em desenvolvimento de software usando várias linguagens de programação, incluindo Python, C, Java, Go e Node.js.</p>
+                    <p>Meu trabalho tem se concentrado na criação de aplicações escaláveis, particularmente em e-commerce e gerenciamento de tarefas, onde enfatizo a simplicidade e a experiência do usuário. Estou familiarizado com metodologias ágeis como Scrum e tenho experiência em testes unitários e versionamento de código, o que me ajudou a contribuir efetivamente em projetos de equipe e entregar soluções de software de alta qualidade.</p>
+                    <p>Meu objetivo é tornar-me um desenvolvedor full stack com foco em otimização de sistemas, gestão de tempo e criação de soluções eficientes.</p>
+                </div>
+                <div class="lang-en">
+                    <p>I am currently pursuing a degree in Systems Analysis and Development, with a strong background in computer science. I have experience in software development using various programming languages, including Python, C, Java, Go, and Node.js.</p>
+                    <p>My work has focused on creating scalable applications, particularly in e-commerce and task management, where I emphasize simplicity and user experience. I am familiar with agile methodologies such as Scrum and have experience in unit testing and code versioning, which have helped me effectively contribute to team projects and deliver high-quality software solutions.</p>
+                    <p>My goal is to become a full stack developer with a focus on system optimization, time management, and creating efficient solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades">
+        <div class="container">
+            <h2 class="section-title lang-pt">Habilidades Técnicas</h2>
+            <h2 class="section-title lang-en">Technical Skills</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3 class="lang-pt">Linguagens de Programação</h3>
+                    <h3 class="lang-en">Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
+
+                            <h4>C</h4>
+                        </div>
+                        <div class="skill-item">
+           
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+                           <h4>Node.js</h4>
+                        </div>
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+
+                            <h4>Python</h4>
+                        </div>
+                        <div class="skill-item">
+                            <img src="src/go.png" alt="Go">
+                            <h4>Go</h4>
+                        </div>
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+
+                            <h4>Java</h4>
+                        </div>
+                        <div class="skill-item">
+
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+          
+                            <h4>JavaScript</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="lang-pt">Desenvolvimento Web</h3>
+                    <h3 class="lang-en">Web Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+          
+                            <h4>React</h4>
+                        </div>
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+
+                            <h4>TailwindCSS</h4>
+                        </div>
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+
+                            <h4>HTML</h4>
+                        </div>
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+
+                            <h4>CSS</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="lang-pt">Ferramentas & Tecnologias</h3>
+                    <h3 class="lang-en">Tools & Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
+
+                            <h4>PostgreSQL</h4>
+                        </div>
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+
+                            <h4>Git</h4>
+                        </div>
+                        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+
+                            <h4>GitHub</h4>
+                        </div>
+                        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
+
+                            <h4>Neovim</h4>
+                        </div>
+                        <div class="skill-item">
+                
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" />
+
+                            <h4>Jest</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos">
+        <div class="container">
+            <h2 class="section-title lang-pt">Projetos</h2>
+            <h2 class="section-title lang-en">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>E-commerce Platform</h3>
+                        <p class="project-date lang-pt">Fev 2024 - Abr 2024</p>
+                        <p class="project-date lang-en">Feb 2024 - Apr 2024</p>
+                        <p class="lang-pt">Plataforma de e-commerce personalizada que permite a venda de produtos digitais e físicos. Projetada para ser altamente escalável, com interface intuitiva e ferramentas para gerenciamento de produtos, estoque e pedidos.</p>
+                        <p class="lang-en">Custom e-commerce platform that allows the sale of digital and physical products. Designed to be highly scalable, with an intuitive interface and tools for managing products, inventory, and orders.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Task Management Application</h3>
+                        <p class="project-date lang-pt">Mai 2024 - Jun 2024</p>
+                        <p class="project-date lang-en">May 2024 - Jun 2024</p>
+                        <p class="lang-pt">Aplicativo de gerenciamento de tarefas que permite aos usuários criar, categorizar e priorizar tarefas diárias. O foco principal foi na simplicidade e eficiência, permitindo que os usuários se concentrem em suas atividades mais importantes.</p>
+                        <p class="lang-en">Task management application that allows users to create, categorize, and prioritize daily tasks. The main focus was on simplicity and efficiency, allowing users to focus on their most important activities.</p>
+                        <div class="project-tech">
+                            <span>Go</span>
+                            <span>Vue.js</span>
+                            <span>PostgreSQL</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Fract-ol</h3>
+                        <p class="project-date">42 School Project</p>
+                        <p class="lang-pt">Um projeto focado na criação de visualizações interativas de fractais como Mandelbrot e Julia escrito em C.</p>
+                        <p class="lang-en">A project focused on creating interactive fractal visualizations like Mandelbrot and Julia sets written in C.</p>
+                        <div class="project-tech">
+                            <span>C</span>
+                            <span class="lang-pt">Algoritmos</span>
+                            <span class="lang-en">Algorithms</span>
+                            <span class="lang-pt">Computação Gráfica</span>
+                            <span class="lang-en">Computer Graphics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Formação -->
+    <section id="formacao">
+        <div class="container">
+            <h2 class="section-title lang-pt">Formação Acadêmica</h2>
+            <h2 class="section-title lang-en">Education</h2>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Systems Analysis and Development</h3>
+                        <h4>Uninter</h4>
+                        <p class="timeline-date">Abr 2024 - Ago 2026 (Em andamento)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineering</h3>
+                        <h4>42 School - Rio de Janeiro</h4>
+                        <p class="timeline-date">Ago 2023 - Abr 2024 (Em pausa)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>The Web Development Bootcamp</h3>
+                        <h4>Udemy</h4>
+                        <p class="timeline-date">Jun 2023 - Dez 2023 (Completo)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Introduction to Computer Science (CS50)</h3>
+                        <h4>Harvard University</h4>
+                        <p class="timeline-date">Abr 2023 - Jun 2023 (Completo)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Técnico em Informática</h3>
+                        <h4>Senac - Niterói, RJ</h4>
+                        <p class="timeline-date">Abr 2011 - Ago 2012 (Completo)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="languages-section">
+                <h3 class="lang-pt">Idiomas</h3>
+                <h3 class="lang-en">Languages</h3>
+                <div class="languages-list">
+                    <div class="language-item">
+                        <h4>Português</h4>
+                        <p class="lang-pt">Nativo</p>
+                        <p class="lang-en">Native</p>
+                    </div>
+                    <div class="language-item">
+                        <h4>English</h4>
+                        <p>Advanced C2 - EF SET certificate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title lang-pt">Contato</h2>
+            <h2 class="section-title lang-en">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="lang-pt">Interessado em trabalharmos juntos? Entre em contato através do formulário ou das minhas redes sociais.</p>
+                    <p class="lang-en">Interested in working together? Get in touch through the form or my social networks.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://linkedin.com/in/" target="_blank" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="lang-pt">Nome</label>
+                        <label for="name" class="lang-en">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="lang-pt">Mensagem</label>
+                        <label for="message" class="lang-en">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit lang-pt">Enviar mensagem</button>
+                    <button type="submit" class="btn-submit lang-en">Send message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&#174 2024 Johny Lira Cavalcante. Todos direitos reservados.</p>
+        <div class="container">
+            <p class="lang-pt">&copy; 2024 Johny Lira Cavalcante. Todos os direitos reservados.</p>
+            <p class="lang-en">&copy; 2024 Johny Lira Cavalcante. All rights reserved.</p>
+        </div>
     </footer>
-        <!-- Script -->
+
+    <!-- Script -->
     <script>
-        function scrollToContato(name) { document.getElementById(name).scrollIntoView({ behavior: 'smooth' }); }
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fixar a navegação ao rolar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Alternância de idioma
+        function toggleLanguage() {
+            const htmlEl = document.documentElement;
+            const currentLang = htmlEl.getAttribute('lang') || 'pt-br';
+            const langToggle = document.getElementById('lang-toggle');
+            const isChecked = langToggle.checked;
+            
+            // Checkbox checked = English, unchecked = Portuguese
+            const newLang = isChecked ? 'en' : 'pt-br';
+            
+            htmlEl.setAttribute('lang', newLang);
+            
+            if (newLang === 'en') {
+                document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'none');
+                document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+            } else {
+                document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+            }
+        }
+        
+        // Inicializar idioma padrão (português)
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+            document.getElementById('lang-toggle').checked = false;
+        });
     </script>
 </body>
 
