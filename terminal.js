@@ -8,7 +8,7 @@ const personalData = {
     interests: ["desenvolvimento web", "otimização de sistemas", "experiência do usuário"],
     contact: "GitHub: lirajohny, LinkedIn: johny-lira95",
     projects: ["Plataforma de E-commerce", "Aplicativo de Gerenciamento de Tarefas", "Fract-ol"],
-    welcome: "Bem-vindo ao meu terminal interativo! Digite \"ajuda\" para ver os comandos disponíveis.",
+    welcome: "Welcome to my interactive terminal! Type \'help\' to see available commands.",
     helpText: `Comandos disponíveis: 
     - "nome" - Saber quem sou
     - "habilidades" - Conhecer minhas tecnologias 
@@ -83,17 +83,17 @@ function generateResponse(input, lang) {
 // Inicialize o terminal quando a página for carregada
 window.addEventListener('load', function() {
   console.log('Inicializando terminal interativo...');
-  
+
   // Encontre o elemento do terminal
   const terminalRoot = document.getElementById('terminal-root');
   if (!terminalRoot) {
     console.error('Elemento #terminal-root não encontrado!');
     return;
   }
-  
+
   // Idioma atual
   let currentLanguage = getCurrentLanguage();
-  
+
   // Crie o HTML do terminal
   terminalRoot.innerHTML = `
     <div class="terminal-container">
@@ -116,7 +116,7 @@ window.addEventListener('load', function() {
       </form>
     </div>
   `;
-  
+
   // Adicione estilos específicos
   const style = document.createElement('style');
   style.textContent = `
@@ -222,50 +222,50 @@ window.addEventListener('load', function() {
     }
   `;
   document.head.appendChild(style);
-  
+
   // Obtenha referências aos elementos
   const terminalBody = terminalRoot.querySelector('.terminal-body');
   const terminalForm = terminalRoot.querySelector('.terminal-form');
   const terminalInput = terminalRoot.querySelector('.terminal-input');
-  
+
   // Histórico do terminal
   let terminalHistory = [
     { text: personalData[currentLanguage].welcome, type: 'system' }
   ];
-  
+
   // Função para adicionar linhas ao histórico do terminal
   function addToHistory(text, type) {
     terminalHistory.push({ text, type });
-    
+
     const line = document.createElement('div');
     line.className = `terminal-line ${type}`;
-    
+
     if (type === 'user') {
       line.innerHTML = `<span class="terminal-prompt">${personalData[currentLanguage].prompt}</span> ${text}`;
     } else {
       // Para quebras de linha em respostas do sistema
       line.innerHTML = text.replace(/\n/g, '<br>');
     }
-    
+
     terminalBody.appendChild(line);
-    
+
     // Rolagem para o final
     terminalBody.scrollTop = terminalBody.scrollHeight;
   }
-  
+
   // Processa o envio do formulário
   terminalForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     const input = terminalInput.value.trim();
     if (!input) return;
-    
+
     // Adiciona a entrada do usuário ao histórico
     addToHistory(input, 'user');
-    
+
     // Processa a resposta
     const response = generateResponse(input, currentLanguage);
-    
+
     // Limpa o terminal ou adiciona a resposta
     if (response === "CLEAR_COMMAND") {
       terminalBody.innerHTML = '';
@@ -273,14 +273,14 @@ window.addEventListener('load', function() {
     } else {
       addToHistory(response, 'system');
     }
-    
+
     // Limpa o input
     terminalInput.value = '';
   });
-  
+
   // Foca no input do terminal quando ele é carregado
   terminalInput.focus();
-  
+
   // Método global para atualizar o idioma
   window.updateTerminalLanguage = function(newLang) {
     currentLanguage = newLang;
