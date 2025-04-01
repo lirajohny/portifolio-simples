@@ -7,6 +7,7 @@
     <title>Johny Lira | Desenvolvedor de Software</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="terminal.js" defer></script>
 </head>
 
 <body>
@@ -19,6 +20,7 @@
                 <li><a href="#habilidades" class="lang-pt">Habilidades</a><a href="#habilidades" class="lang-en">Skills</a></li>
                 <li><a href="#projetos" class="lang-pt">Projetos</a><a href="#projetos" class="lang-en">Projects</a></li>
                 <li><a href="#formacao" class="lang-pt">Formação</a><a href="#formacao" class="lang-en">Education</a></li>
+                <li><a href="#terminal-section" class="lang-pt">Terminal</a><a href="#terminal-section" class="lang-en">Terminal</a></li>
                 <li><a href="#contato" class="lang-pt">Contato</a><a href="#contato" class="lang-en">Contact</a></li>
             </ul>
             <div class="language-switch">
@@ -340,6 +342,17 @@
         </div>
     </footer>
 
+    <!-- Terminal Interativo -->
+    <section id="terminal-section">
+        <div class="container">
+            <h2 class="section-title lang-pt">Terminal Interativo</h2>
+            <h2 class="section-title lang-en">Interactive Terminal</h2>
+            <p class="terminal-intro lang-pt">Experimente interagir com este terminal para descobrir mais sobre mim. Digite "ajuda" para ver os comandos disponíveis.</p>
+            <p class="terminal-intro lang-en">Try interacting with this terminal to discover more about me. Type "help" to see available commands.</p>
+            <div id="terminal-root" class="terminal-wrapper"></div>
+        </div>
+    </section>
+
     <!-- Script -->
     <script>
         // Navegação suave
@@ -378,9 +391,17 @@
             if (newLang === 'en') {
                 document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'none');
                 document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+                // Atualiza o idioma do terminal se estiver carregado
+                if (window.updateTerminalLanguage) {
+                    window.updateTerminalLanguage('en');
+                }
             } else {
                 document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'block');
                 document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+                // Atualiza o idioma do terminal se estiver carregado
+                if (window.updateTerminalLanguage) {
+                    window.updateTerminalLanguage('pt-br');
+                }
             }
         }
         
